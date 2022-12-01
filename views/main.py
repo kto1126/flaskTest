@@ -12,7 +12,7 @@ def index():
 def login():
     return render_template("manager/login.html")
 
-@main.route('/sigup')
+@main.route('/signup')
 def sigup():
     return render_template("manager/sigup.html")
 

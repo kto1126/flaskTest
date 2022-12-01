@@ -2,30 +2,6 @@
 {% extends "base.html" %}
 {%  block  content %}
 <body>
-{#    <div class="main">#}
-{#        <h1 class="logo">로그인</h1>#}
-{#        <div class="container">#}
-{#        <form method="POST", action="{{url_for('singup.login_test')}}">#}
-{#            <br>#}
-{#            <br>#}
-{#            <br>#}
-{#            <br>#}
-{#            <br>#}
-{#            <br>#}
-{#            <br>#}
-{#            <br>#}
-{#            <br>#}
-{#            {{ msg }}#}
-{#            {{ welcome }}#}
-{#            <br>#}
-{#            <input type="text" placeholder="ID" name = "id" id="id" class="account">#}
-{#            <input type="password" placeholder="Password" name = "pw" id="password" class="account">#}
-{#            <input type="submit" name = "sumbit" value="login_test">#}
-{#            <p id="alert" class="account"> </p>#}
-{#        </form>#}
-{#        </div>#}
-{#    </div>#}
-
     <article>
         <div class = "login_wrapper">
             <div class="login_logo">SkyWatch</div>
@@ -37,10 +13,20 @@
                 {{ welcome }}
             </form>
             <a class = "login_bottom" href="" >비밀번호를 잊으셨나요?</a>
-
+            <!-- footer -->
+            <div class="footer">
+                <div class="footer_inner">
+                    <div class="footer_copy">
+                        <span class="text">Copyright</span>
+                        <span class="corp">© SKYWATCH Corp.</span> <br>
+                        <span class="text">All Rights Reserved.</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </article>
 
     <script src="/static/js/login.js" defer=""></script>
 </body>
+
 {%  endblock %}

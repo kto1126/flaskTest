@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<meta name="description" content="">
 		<meta name="author" content="">
@@ -17,7 +17,8 @@
 		<link href="/static/css/owl.theme.default.min.css"  rel="stylesheet">
 		<link href="/static/css/animate.css" rel="stylesheet">
 		<link href="/static/css/style.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="/static/css/login.css">
+        {# 찾았다 static 지정해줘야 로그인페이지밖으로 나온 원인을 해결#}
+        <link rel="stylesheet" type="text/css" href="{{url_for( 'static',filename='css/login.css') }}">
 	</head>
 <body id="page-top">
     {% include 'navbar.html' %}

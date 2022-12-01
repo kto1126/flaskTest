@@ -29,6 +29,14 @@ change these colors to change overlays
 	color: #FCBE03;
 }
 
+.mz-module:hover .ot-circle.color5 {
+	color: #a355fc;
+}
+
+.mz-module:hover .ot-circle.color6 {
+	color: #a355fc;
+}
+
 /*--------------------
 1. General
 --------------------*/
@@ -75,7 +83,7 @@ a, a:hover, a:focus, a:active, a.active {
 }
 
 section {
-	padding: 70px 0;
+	padding: 100px 0;
 }
 
 ul {
@@ -133,22 +141,7 @@ section ul li:before {
 	padding: 0px;
 	margin-left: 10px;
 }
-.navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus,.navbar-default .navbar-brand:active,.navbar-default .navbar-brand.active {
-	color: #fec503
-}
-.navbar-default .navbar-collapse {
-	border-color: rgba(255,255,255,.02)
-}
-.navbar-default .navbar-toggle {
-	background-color: #fed136;
-	border-color: #fed136
-}
-.navbar-default .navbar-toggle .icon-bar {
-	background-color: #fff
-}
-.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus {
-	background-color: #fed136
-}
+
 .navbar-default .nav li a {
 	font-family: "Open Sans",sans-serif;
 	text-transform: uppercase;
@@ -158,19 +151,10 @@ section ul li:before {
 	color: #444448;
 }
 .navbar-default .nav li a:hover,.navbar-default .nav li a:focus {
-	color: #fed136;
-	outline: 0
+	color: #000000;
+	font-size: 15px;
 }
 
-.navbar-default .navbar-nav>.active>a {
-	border-radius: 0;
-	color: #fff;
-	background-color: #fed136
-}
-.navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a:focus {
-	color: #fff;
-	background-color: #fec503
-}
 
 @media (min-width:768px) {
 	.navbar-default
@@ -215,6 +199,7 @@ header {
 .owl-slider-item {
 	position: relative;
 	background-color: #000;
+	height: 900px;
 }
 .owl-slider-item img {
 	opacity: 0.7;
@@ -222,16 +207,15 @@ header {
 .owl-slider .owl-controls {
 	position: absolute;
 	left: 0;
-	top: 38%;
-	width: 100%;	
+	top: 45%;
+	width: 99.9%;	
 }
 
 .owl-slider .owl-controls .owl-nav [class*=owl-] {
 	padding: 30px 40px;
 	background: rgba(0, 0, 0, 0.26);
-	border-radius: 0;
 	margin: 0;
-	font-size: 30px;
+	font-size: 25px;
 	z-index: 1000;
 }
 
@@ -332,7 +316,7 @@ header {
 }
 
 .dark-bg .section-title h2 {
-	color: #fff;
+	color: #B3B3BB;
 }
 
 
@@ -349,7 +333,7 @@ header {
 
 .mz-module {
 	position: relative;
-	margin-bottom: 30px;
+	margin-bottom: 40px;
 }
 
 .mz-module-about {
@@ -365,7 +349,7 @@ header {
 	/* text-transform: uppercase; */
 	color: #424242;
 	/* letter-spacing: 2px; */
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 
 .dark-bg .mz-module-about h3 {
@@ -668,21 +652,7 @@ color: #fff;
 	bottom: 40px;
 	right: 50px;
 }
-#back-top a {
-	width: 60px;
-	height: 60px;
-	display: block;
-	text-align: center;
-	font: 11px/100% Arial, Helvetica, sans-serif;
-	text-transform: uppercase;
-	text-decoration: none;
-	color: #FFFFFF;
-	background: #A9A9B1;
-	/* background color transition */
-	-webkit-transition: 1s;
-	-moz-transition: 1s;
-	transition: 1s;
-}
+
 #back-top a:hover {
 	background: #fed136;
 }
