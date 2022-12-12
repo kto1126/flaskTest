@@ -1,10 +1,13 @@
 {#테스트#}
-{% extends "base.html" %}
-{%  block  content %}
+{#{% extends "base.html" %}#}
+{#{%  block  content %}#}
+{% extends "login_main_base.html" %}
+{% block login_content %}
 <body>
     <article>
         <div class = "login_wrapper">
             <div class="login_logo">SkyWatch</div>
+            <!-- sumbit누를시 requset.form 받아올 타입은 name 입니다. -->
             <form class="login_form" method="POST", action="{{url_for('singup.login_test')}}">
                 <input id="LOGIN_ID" class = "login_text" type="text" name="id" placeholder="아이디를 입력해주세요.">
                 <input  id="LOGIN_PW" class = "login_text" type="password" name="pw" placeholder="5자리이상 비밀번호를 입력해주세요.">
@@ -12,6 +15,7 @@
                 {{ msg }}
                 {{ welcome }}
             </form>
+            <a class = "login_bottom" href="{{ url_for('main.sigup')}}" >회원가입</a>
             <a class = "login_bottom" href="" >비밀번호를 잊으셨나요?</a>
             <!-- footer -->
             <div class="footer">
@@ -25,8 +29,7 @@
             </div>
         </div>
     </article>
-
     <script src="/static/js/login.js" defer=""></script>
 </body>
-
-{%  endblock %}
+{% endblock %}
+{#{%  endblock %}#}

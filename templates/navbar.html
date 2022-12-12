@@ -3,14 +3,11 @@
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
-            <a href="{{url_for('main.index')}}" id="logo"><span id="logo1">SKY</span><span id="logo2">Watch</span></a>
+            <a href="{{url_for('main.mains')}}" id="logo"><span id="logo1">SKY</span><span id="logo2">Watch</span></a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li class="hidden">
-                    <a href="#"></a>
-                </li>
                 <li>
                     {% if session.get('loggedin') %}
                         userId : {{ session['id'] }}
@@ -23,41 +20,6 @@
                     {% if session.get('loggedin') %}
                     {% else %}
                         <a class="page-scroll" href="{{url_for('main.sigup')}}">회원가입</a>
-                    {% endif %}
-                </li>
-                <li>
-{#                    <a class="page-scroll" href="{{ url_for('main.features') }}">실시간 영상 조작(단속구역 자율주행)</a>#}
-                    {% if session.get('loggedin') %}
-                        <a class="page-scroll" href="{{ url_for('main.features') }}">실시간 영상 조작</a>
-                    {% else %}
-                        <a disabled="disabled">실시간 영상 조작 비활성화</a>
-                    {% endif %}
-                </li>
-                <li>
-{#                    <a class="page-scroll" href="{{ url_for('main.car_collection') }}">불법 주정차 차량 정보 수집(실시간 영상 조작안에서 기능넣는게 맞다고생각함)</a>#}
-                    {% if session.get('loggedin') %}
-                        <a class="page-scroll" href="{{ url_for('main.car_collection') }}">불법 주정차</a>
-                    {% else %}
-                    {% endif %}
-                </li>
-                <li>
-{#                    <a class="page-scroll" href="{{ url_for('main.save') }}">수집 정보 저장(실시간 영상 조작안에서 기능넣는게 맞다고생각함)</a>#}
-                    {% if session.get('loggedin') %}
-                        <a class="page-scroll" href="{{ url_for('main.save') }}">수집 정보</a>
-                    {% else %}
-                    {% endif %}
-                </li>
-                <li>
-                    {% if session.get('loggedin') %}
-                        <a class="page-scroll" href="{{ url_for('main.crackdown_inquiry') }}">단속 정보 조회</a>
-                    {% else %}
-                    {% endif %}
-                </li>
-                <li>
-{#                    <a class="page-scroll" href="{{ url_for('main.Registration_and_operation') }}">드론 등록 및 조작(실시간영상하면서 조작할수있는데 굳이 넣을필요가없다고 생각한다)</a>#}
-                    {% if session.get('loggedin') %}
-                        <a class="page-scroll" href="{{ url_for('main.Registration_and_operation') }}">드론등록 및 조작</a>
-                    {% else %}
                     {% endif %}
                 </li>
                 <li>

@@ -14,12 +14,17 @@
                 <br>
                 <br>
                 <br>
-                <br>
-                <br>
-                <br>
-                <div>
-                    수집 정보 저장함
-                </div>
+                <form method="POST" action="{{url_for('car_num_saveView.car_dateQuery')}}">
+                    <input type="date" id="date" value="date" name="date"><input type="submit" 불러오기>
+                </form>
+                    <div>
+{#                        <img src="{{ url_for('static',filename = parking) }}" width="450" height="450">#}
+{#                        <img src="{{ url_for('static',filename = numplate) }}" width="450" height="450">#}
+                        {% for obj in data_list %}
+                            <img src = "{{ url_for('static',filename = obj.parking) }}" width="450" height="450">
+                            <img src = "{{ url_for('static',filename = obj.numplate) }}" width="450" height="450">
+                        {% endfor %}
+                    </div>
             </div>
         </div>
     </div>

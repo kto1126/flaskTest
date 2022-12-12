@@ -19,6 +19,8 @@
 		<link href="/static/css/style.css" rel="stylesheet">
         {# 찾았다 static 지정해줘야 로그인페이지밖으로 나온 원인을 해결#}
         <link rel="stylesheet" type="text/css" href="{{url_for( 'static',filename='css/login.css') }}">
+        {% block head %}
+        {% endblock %}
 	</head>
 <body id="page-top">
     {% include 'navbar.html' %}

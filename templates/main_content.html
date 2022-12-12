@@ -45,7 +45,10 @@
                         <h3>드론 관리 및 제어</h3>
                         <p>Drone Management and Control</p>
                     </div>
-                    <a href="#" class="mz-module-button">read more</a>
+                    {% if session.get('loggedin') %}
+                        <a href="{{ url_for('main.Registration_and_operation') }}" class="mz-module-button">read more</a>
+                    {% else %}
+                    {% endif %}
                 </div>
             </div>
 
@@ -57,7 +60,10 @@
                         <h3>단속 번호판 조회</h3>
                         <p>Regulatory license plate check</p>
                     </div>
-                    <a href="#" class="mz-module-button">read more</a>
+                    {% if session.get('loggedin') %}
+                        <a href="{{ url_for('car_num_saveView.car_saveView') }}" class="mz-module-button">read more</a>
+                    {% else %}
+                    {% endif %}
                 </div>
             </div>
 
@@ -69,7 +75,10 @@
                         <h3>실시간 영상</h3>
                         <p>Real-time video</p>
                     </div>
-                    <a href="#" class="mz-module-button">read more</a>
+                    {% if session.get('loggedin') %}
+                        <a href="{{ url_for('main.features')}}" class="mz-module-button">read more</a>
+                    {% else %}
+                    {% endif %}
                 </div>
             </div>
 
@@ -81,7 +90,10 @@
                         <h3>단속구역 위치</h3>
                         <p>Location of the restriction area</p>
                     </div>
-                    <a href="#" class="mz-module-button">read more</a>
+                    {% if session.get('loggedin') %}
+                        <a href="{{ url_for('googleMap.googlemap') }}" class="mz-module-button">read more</a>
+                    {% else %}
+                    {% endif %}
                 </div>
             </div>
 

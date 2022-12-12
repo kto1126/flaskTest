@@ -112,7 +112,7 @@ def login_test():
                 session['id'] = row1['id']
                 session['pw'] = row1['password']
                 # return redirect(url_for('singup.login_check'))
-                return redirect(url_for('main.index'))
+                return redirect(url_for('main.mains'))
         else:
             msg = '아이디 틀렸거나 비번 다시 하세요'
     return render_template('manager/login.html',msg=msg)

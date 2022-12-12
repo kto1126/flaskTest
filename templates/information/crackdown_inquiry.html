@@ -1,11 +1,11 @@
 {% extends "base.html" %}
+
+{% block head %}
+{{"decoupled-map"|googlemap_js(35.149681,126.919929, varname="decoupledmap", markers=[(35.149681,126.919929)])}}{{ gmap.js }} {{ multimap.js }}
+{% endblock %}
+
+
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
 <body>
 <section id="about" class="light-bg">
     <div class="container">
@@ -14,62 +14,20 @@
                 <br>
                 <br>
                 <br>
-                <br>
-                <br>
-                <br>
-                <div>
-{#                    <form action="{{ url_for('KakaoMap.kakaomap') }}", method="POST">#}
-{#                        <input type = "text" id = "data" name = "data"/>#}
-{#                        <input type = "submit" id = "searcBtn" value="검색"/>#}
-{#                    </form>#}
-{#                    <input type="button" value="현위치로 검색" id="nowBtn" />#}
+                <h2> 멀티 마커 페이지</h2>
+{#                googleMap_api 이런거 상관없이 그냥 출력해주는것인데 mysql 어떻게 가져올것인지#}
 
-{#                    <p  id="prediction">{{ prediction }}</p>#}
-{#                    <p id="test" style="display: none;">test</p>#}
+{#                {% with multimap=googlemap_obj("another-map", 35.149681,126.91992,#}
+{#                       marker = [])%}#}
 
-                    <div id="map" style="width:800px; height:700px; text-align:center;"></div>
-                    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=16cb0df93a4f801d54f0612ed59a5cc6&libraries=services"></script>
-                    <script>
-                            var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-                            mapOption = {
-                                center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-                                level: 3 // 지도의 확대 레벨
-                            };
+{#                전에는 with으로 인해 mysql 어떻게 가져올수있는지 이해안갔지만 이번에는 api_함수로인해 가져올수있다는 사실이 있다#}
+{#                따라서 굳이 with안써도 {{ multimap.html }} 써도 된다.#}
+                    {{multimap.html}}
+                    {{multimap.js}}
 
-                        // 지도를 생성합니다
-                        var map = new kakao.maps.Map(mapContainer, mapOption);
+{#                {% endwith %}#}
+{#                {{ gmap.html }}#}
 
-                        // 주소-좌표 변환 객체를 생성합니다
-                        var geocoder = new kakao.maps.services.Geocoder();
-
-                        // 주소로 좌표를 검색합니다
-                        geocoder.addressSearch('광주광역시 북구 일곡로', function(result, status) {
-
-                            // 정상적으로 검색이 완료됐으면
-                             if (status === kakao.maps.services.Status.OK) {
-
-                                var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-
-                                // 결과값으로 받은 위치를 마커로 표시합니다
-                                var marker = new kakao.maps.Marker({
-                                    map: map,
-                                    position: coords
-                                });
-
-                                // 인포윈도우로 장소에 대한 설명을 표시합니다
-                                var infowindow = new kakao.maps.InfoWindow({
-                                    content: '<div style="width:150px;text-align:center;padding:6px 0;">우리회사</div>'
-                                });
-                                infowindow.open(map, marker);
-
-
-                                // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-                                map.setCenter(coords);
-                            }
-                        });
-
-                    </script>
-                </div>
             </div>
         </div>
 
